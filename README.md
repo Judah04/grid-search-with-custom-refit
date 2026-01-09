@@ -42,6 +42,54 @@ matplotlib >= 3.0
 jupyter >= 1.0
 ```
 
+## 🔑 Key Concepts
+
+### Custom Refit Function
+
+The heart of this implementation is the `refit_strategy` function:
+
+```python
+def refit_strategy(cv_results):
+    """
+    Select best model by:
+    1. Filtering for precision > 0.98
+    2. Selecting models with top recall (within 1 std)
+    3. Choosing the fastest model
+    """
+    # Implementation details in notebook
+    pass
+```
+
+### GridSearchCV Configuration
+
+```python
+grid_search = GridSearchCV(
+    estimator=SVC(),
+    param_grid=tuned_parameters,
+    scoring=['precision', 'recall'],  # Multiple metrics
+    refit=refit_strategy,              # Custom selection
+    cv=5                               # 5-fold cross-validation
+)
+```
+
+## 📈 Results
+
+The notebook demonstrates:
+- Comprehensive grid search results across all parameter combinations
+- Step-by-step filtering process visualization
+- Final model selection with detailed metrics
+- Test set evaluation with confusion matrix
+- Performance comparison of different strategies
+
+## 🎓 Learning Outcomes
+
+After working through this notebook, you'll understand:
+
+1. How to implement custom refit strategies in GridSearchCV
+2. When and why to use multi-criteria model selection
+3. How to balance competing objectives (accuracy vs. speed)
+4. Best practices for hyperparameter tuning in production scenarios
+
 ## 📚 Additional Resources
 
 - [scikit-learn GridSearchCV Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html)
