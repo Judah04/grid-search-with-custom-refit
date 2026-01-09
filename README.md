@@ -66,9 +66,8 @@ def refit_strategy(cv_results):
 grid_search = GridSearchCV(
     estimator=SVC(),
     param_grid=tuned_parameters,
-    scoring=['precision', 'recall'],  # Multiple metrics
-    refit=refit_strategy,              # Custom selection
-    cv=5                               # 5-fold cross-validation
+    scoring=scores,  # Multiple metrics
+    refit=refit_strategy              # Custom selection
 )
 ```
 
