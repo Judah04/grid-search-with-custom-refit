@@ -1,0 +1,30 @@
+#Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large outputs
+images/*.png
+*.gif
+*.mp4
+*.avi
+
+# Temporary
+*.tmp
+*.log
